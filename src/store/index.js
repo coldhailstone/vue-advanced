@@ -11,7 +11,9 @@ export default new Vuex.Store({
         jobs: []
     },
     getters: {
-
+        fetchedAsk(state) {
+            return state.ask;
+        }
     },
     mutations: {
         SET_NEWS(state, news) {
@@ -30,14 +32,14 @@ export default new Vuex.Store({
             .then(response => context.commit('SET_NEWS', response.data))
             .catch(console.error);
         },
-        FETCH_ASK(context) {
+        FETCH_ASK({ commit }) {
             fetchAskList()
-                .then(response => context.commit('SET_ASK', response.data))
+                .then(({ data }) => commit('SET_ASK', data))
                 .catch(console.error);
         },
         FETCH_JOBS({ commit }) {
             fetchJobsList()
-                .then(response => commit('SET_JOBS', response.data))
+                .then(({ data }) => commit('SET_JOBS', data))
                 .catch(console.error);
         }
     }
