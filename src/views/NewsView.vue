@@ -1,6 +1,6 @@
 <template>
-  <div>
-      <ul class="news-list">
+    <div>
+        <ul class="news-list">
             <li v-for="item in $store.state.news" class="post">
                 <div class="points">
                     {{ item.points }}    
@@ -17,8 +17,8 @@
                     </small>
                 </div>
             </li>
-      </ul>
-  </div>
+        </ul>
+    </div>
 </template>
 
 <script>
