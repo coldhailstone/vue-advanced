@@ -1,5 +1,7 @@
 <template>
-    <div>
+    <list-item></list-item>
+
+    <!-- <div>
         <ul class="news-list">
             <li v-for="item in ask" class="post">
                 <div class="points">
@@ -18,13 +20,17 @@
                 </div>
             </li>
         </ul>
-    </div>
+    </div> -->
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import ListItem from '../components/ListItem.vue';
+// import { mapState, mapGetters } from 'vuex';
 
 export default {
+    components: {
+        ListItem
+    },
     computed: {
         // ...mapGetters([
         //     'fetchedAsk'
@@ -32,39 +38,9 @@ export default {
         // ...mapGetters({
         //     askItems: 'fetchedAsk'
         // })
-        ...mapState({
-            ask: state => state.ask
-        })
-    },
-    created() {
-        this.$store.dispatch('FETCH_ASK');
+        // ...mapState({
+        //     ask: state => state.ask
+        // })
     }
 }
 </script>
-
-<style scoped>
-.news-list {
-    margin: 0;
-    padding: 0;
-}
-.post {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #eee;
-}
-.points {
-    width: 80px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #42b883
-}
-.news-title {
-    margin: 0;
-}
-.link-text {
-    color: #828282;
-}
-</style>
