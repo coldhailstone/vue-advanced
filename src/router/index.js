@@ -16,7 +16,7 @@ export default new VueRouter({
         { path: '/news', component: NewsView },
         { path: '/ask', component: AskView },
         { path: '/jobs', component: JobsView },
-        { path: '/user', component: UserView },
+        { path: '/user/:id', component: UserView },
         { path: '/item', component: ItemView }
     ]
 });
