@@ -17,6 +17,6 @@ export default new VueRouter({
         { path: '/ask', component: AskView },
         { path: '/jobs', component: JobsView },
         { path: '/user/:id', component: UserView },
-        { path: '/item', component: ItemView }
+        { path: '/item/:id', component: ItemView }
     ]
 });
