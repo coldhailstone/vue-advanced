@@ -1,9 +1,9 @@
 <template>
     <div>
         <ul class="news-list">
-            <li v-for="item in $store.state.news" class="post">
+            <li v-for="item in listItems" class="post">
                 <div class="points">
-                    {{ item.points }}    
+                    {{ item.points || 0 }}    
                 </div>
                 <div>
                     <p class="news-title">
@@ -24,7 +24,9 @@
 <script>
 export default {
     computed: {
-        
+        listItems() {
+            return this.$store.state[this.$route.name];
+        }
     },
     created() {
         const name = this.$route.name;
