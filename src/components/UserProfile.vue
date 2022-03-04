@@ -1,24 +1,19 @@
 <template>
   <div>
-      <section>
-            <div class="user-container">
-                <div>
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <div class="user-description">
-                    <div>
-                        {{ info.id }}
-                    </div>
-                    <div class="time">
-                        {{ info.created }}
-                    </div>
-                </div>
+        <div class="user-container">
+            <div>
+                <i class="fa-solid fa-user"></i>
             </div>
-            <h2>{{ info.title }}</h2>
-      </section>
-      <section>
-          <div v-html="info.about"></div>
-      </section>
+            <div class="user-description">
+                <div>
+                    <slot name="username"></slot>
+                </div>
+                <div class="time">
+                    <slot name="time"></slot>
+                </div>
+                <slot name="karma"></slot>
+            </div>
+        </div>
   </div>
 </template>
 
@@ -28,7 +23,7 @@ export default {
         userInfo() {
             return this.$store.state.user;
         }
-    },
+    }
 }
 </script>
 
