@@ -35,7 +35,7 @@
 export default {
     computed: {
         listItems() {
-            return this.$store.state[this.$route.name];
+            return this.$store.state.list;
         }
     }
 }
