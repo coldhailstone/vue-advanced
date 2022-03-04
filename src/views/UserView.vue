@@ -1,15 +1,9 @@
 <template>
   <div>
         <user-profile>
-            <div slot="username">
-                {{ userInfo.id }}
-            </div>
-            <template slot="time">
-                {{ userInfo.created }}
-            </template>
-            <div slot="karma">
-                {{ userInfo.karma }}
-            </div>
+            <div slot="username">{{ userInfo.id }}</div>
+            <span slot="time">{{ `Joined ${userInfo.created}, ` }}</span>
+            <span slot="karma">{{ userInfo.karma }}</span>
         </user-profile>
   </div>
 </template>
@@ -32,7 +26,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

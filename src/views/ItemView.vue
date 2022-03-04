@@ -2,14 +2,10 @@
   <div>
       <section>
             <user-profile>
-                <div slot="username">
-                    <router-link :to="`/user/${fetchedItem.user}`">
-                        {{ fetchedItem.user }}
-                    </router-link>
-                </div>
-                <template slot="time">
-                    {{ fetchedItem.time_ago }}
-                </template>
+                <router-link slot="username" :to="`/user/${fetchedItem.user}`">
+                    {{ fetchedItem.user }}
+                </router-link>
+                <template slot="time">{{ `Posted ${fetchedItem.time_ago}` }}</template>
             </user-profile>
       </section>
       <section>
@@ -38,20 +34,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.user-container {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem;
-}
-.user-description {
-    padding-left: 8px;
-}
-.time {
-    font-size: 0.7rem;
-}
-.fa-user {
-    font-size: 2.5rem;
-}
-</style>
