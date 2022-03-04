@@ -24,14 +24,11 @@
 
 <script>
 export default {
-    props: {
-        info: Object
-    }
-    // computed: {
-    //     userInfo() {
-    //         return this.$store.state.user;
-    //     }
-    // },
+    computed: {
+        userInfo() {
+            return this.$store.state.user;
+        }
+    },
 }
 </script>
 
