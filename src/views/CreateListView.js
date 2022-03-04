@@ -6,15 +6,13 @@ export default function createListView(name) {
         name,
         created() {
             bus.$emit('start:spinner');
-            setTimeout(() => {
-                this.$store.dispatch('FETCH_LIST', this.$route.name)
-                    .then(() => {
-                        bus.$emit('end:spinner');
-                    })
-                    .catch((err) => {
-                        console.error(err);
-                    });
-            }, 3000);
+            this.$store.dispatch('FETCH_LIST', this.$route.name)
+                .then(() => {
+                    bus.$emit('end:spinner');
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
         },
         render(createElement) {
             return createElement(ListView);
