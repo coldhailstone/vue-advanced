@@ -34,23 +34,9 @@
 <script>
 export default {
     computed: {
-        routeName() {
-            return this.$route.name;
-        },
         listItems() {
-            return this.$store.state[this.routeName];
+            return this.$store.state[this.$route.name];
         }
-    },
-    created() {
-        let actionName = "";
-        if (this.routeName === 'news')
-            actionName = 'FETCH_NEWS';
-        else if (this.routeName === 'ask')
-            actionName = 'FETCH_ASK';
-        else if (this.routeName === 'jobs')
-            actionName = 'FETCH_JOBS';
-
-        this.$store.dispatch(actionName);
     }
 }
 </script>
