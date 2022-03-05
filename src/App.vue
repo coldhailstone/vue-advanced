@@ -23,6 +23,9 @@ export default {
             loadingStatus: false
         }
     },
+    mounted() {
+        console.log(process.env.VUE_APP_TITLE);
+    },
     methods: {
         startSpinner() {
             this.loadingStatus = true;
